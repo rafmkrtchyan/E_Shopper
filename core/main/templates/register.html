@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+
+{% block content %}	
+
+<style>
+	.col-lg-6 {
+		position: relative;
+		left: 320px;
+		margin: 0;
+		padding: 0;
+	
+	}
+
+	.form-outline  {
+		padding-top: 10px;
+	}
+
+	#loginbut {
+		height: 28px;
+
+	}
+
+	.mb-0 {
+		position: relative;
+		top: 5px;
+		font-size: 15px;
+	}
+
+	section {
+		padding-bottom: 100px;
+		
+	}
+
+
+
+</style>
+
+
+<section class="h-100 gradient-form" style="background-color: #ffffff;">
+	<div class="container py-5 h-100">
+	  <div class="row d-flex justify-content-center align-items-center h-100">
+		<div class="col-xl-10">
+		  <div class="card rounded-3 text-black">
+			<div class="row g-0">
+			  <div class="col-lg-6">
+				<div class="card-body p-md-5 mx-md-4">
+  
+				  <div class="text-center">
+					<a href="{% url 'home' %}"><img src="../../media/media/logo.png" alt="" 
+					  style="width: 185px;" alt="logo"></a>
+					<h4 class="mt-1 mb-5 pb-1">We are E-Shopper Team</h4>
+				  </div>
+  
+				  <form action="{% url 'register' %}" method="POST">
+					{% csrf_token %}
+
+					
+					
+					<div class="form-outline mb-4">
+						
+						{{ form.as_p }}
+
+					</div>
+
+
+
+					<div class="text-center pt-1 mb-5 pb-1">
+					  <button id="loginbut" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"> Register </button>
+					  
+					</div>
+  
+					<div class="d-flex align-items-center justify-content-center pb-4">
+					  <p class="mb-0 me-2">Already have an account?<a href="{% url 'login' %}"> Login Now</p></a>
+					  
+					</div>
+  
+				  </form>
+  
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+{% endblock %}
+	
+	
